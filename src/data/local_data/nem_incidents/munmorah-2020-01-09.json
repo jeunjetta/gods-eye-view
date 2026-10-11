@@ -1,0 +1,99 @@
+{
+  "id": "munmorah-2020-01-09",
+  "name": "Munmorah-Tuggerah Line Trips",
+  "date": "2020-01-09",
+  "region": "NSW",
+  "summary": "Fire activity under transmission lines in the Central Coast/Hunter region caused tripping of the 2M (Munmorah-Tuggerah 132 kV) and 26 (Munmorah-Sydney West 330 kV) lines. This incident occurred during the 2019-2020 Black Summer bushfire crisis.",
+  "source": "AEMO Power System Operating Incident Report - NSW Line Trips January 2020",
+  "sourceUrl": "https://aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-events-and-reports/power-system-operating-incident-reports",
+  "timeline": [
+    {
+      "time": "13:15",
+      "event": "Bushfire activity reported under transmission corridor near Munmorah",
+      "elements": [],
+      "type": "note"
+    },
+    {
+      "time": "13:42",
+      "event": "Munmorah-Tuggerah 2M line (132 kV) trips due to smoke ionisation",
+      "elements": ["Munmorah", "Tuggerah"],
+      "type": "trip"
+    },
+    {
+      "time": "13:45",
+      "event": "Network support constraints invoked for central coast region",
+      "elements": [],
+      "type": "constraint"
+    },
+    {
+      "time": "14:02",
+      "event": "Munmorah-Sydney West 26 line (330 kV) trips",
+      "elements": ["Munmorah to Sydney West"],
+      "type": "trip"
+    },
+    {
+      "time": "14:10",
+      "event": "Load at risk warnings issued for Central Coast area",
+      "elements": [],
+      "type": "note"
+    },
+    {
+      "time": "16:30",
+      "event": "2M line returned to service following fire containment",
+      "elements": ["Munmorah", "Tuggerah"],
+      "type": "return"
+    },
+    {
+      "time": "17:45",
+      "event": "26 line returned to service, system restored",
+      "elements": ["Munmorah to Sydney West"],
+      "type": "return"
+    }
+  ],
+  "affectedElements": {
+    "lines": [
+      "Munmorah to Sydney West"
+    ],
+    "substations": [
+      "Munmorah",
+      "Lake Munmorah",
+      "Tuggerah",
+      "Sydney West"
+    ],
+    "generators": []
+  },
+  "constraints": [
+    {
+      "id": "N>>N_MUN_TUG",
+      "description": "Network constraint for Munmorah-Tuggerah corridor outage",
+      "invoked": "13:45",
+      "released": "16:30"
+    },
+    {
+      "id": "N>>N_MUN_SW",
+      "description": "Network constraint for Munmorah-Sydney West outage",
+      "invoked": "14:02",
+      "released": "17:45"
+    }
+  ],
+  "camera": {
+    "longitude": 151.35,
+    "latitude": -33.25,
+    "height": 100000,
+    "heading": 0,
+    "pitch": -45
+  },
+  "aemoNameMapping": {
+    "lines": {
+      "Munmorah-Tuggerah 2M 132kV": "Not found in GA (distribution level)",
+      "Munmorah-Sydney West 26 330kV": "Munmorah to Sydney West"
+    },
+    "substations": {
+      "Munmorah": "Munmorah / Lake Munmorah",
+      "Tuggerah": "Tuggerah",
+      "Sydney West": "Sydney West"
+    },
+    "notes": "The 132 kV Munmorah-Tuggerah line is not in the GA transmission dataset (likely classified as sub-transmission). GA has both 'Munmorah' and 'Lake Munmorah' substations."
+  },
+  "notes": "This incident was part of the widespread bushfire impacts across NSW during the 2019-2020 Black Summer. The Central Coast region was particularly affected with multiple transmission contingencies."
+}

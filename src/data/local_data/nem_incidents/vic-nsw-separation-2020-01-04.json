@@ -1,0 +1,125 @@
+{
+  "id": "vic-nsw-separation-2020-01-04",
+  "name": "NSW-Victoria Interconnector Separation",
+  "date": "2020-01-04",
+  "region": "NSW/VIC",
+  "summary": "Severe bushfire conditions in the Snowy Mountains region caused multiple 330 kV line trips, leading to separation of the NSW and Victorian power systems via the VIC-NSW interconnector. This was one of the most significant power system events during the Black Summer bushfires.",
+  "source": "AEMO Power System Operating Incident Report - NSW/VIC Separation January 2020",
+  "sourceUrl": "https://aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-events-and-reports/power-system-operating-incident-reports",
+  "timeline": [
+    {
+      "time": "12:30",
+      "event": "Bushfire conditions intensify in Snowy Mountains region",
+      "elements": [],
+      "type": "note"
+    },
+    {
+      "time": "13:06",
+      "event": "Upper Tumut to Canberra 330 kV line trips due to fire-related fault",
+      "elements": ["Upper Tumut", "Canberra"],
+      "type": "trip"
+    },
+    {
+      "time": "13:06",
+      "event": "N-1 constraints invoked for Snowy region",
+      "elements": [],
+      "type": "constraint"
+    },
+    {
+      "time": "13:15",
+      "event": "Murray to Upper Tumut 330 kV line trips",
+      "elements": ["Murray", "Upper Tumut"],
+      "type": "trip"
+    },
+    {
+      "time": "13:18",
+      "event": "Lower Tumut to Canberra line trips due to cascading protection",
+      "elements": ["Lower Tumut to Canberra"],
+      "type": "trip"
+    },
+    {
+      "time": "13:20",
+      "event": "NSW-VIC interconnector separation occurs. Victoria and NSW systems now operating independently",
+      "elements": [],
+      "type": "note"
+    },
+    {
+      "time": "13:25",
+      "event": "Emergency frequency control activated in both regions",
+      "elements": [],
+      "type": "constraint"
+    },
+    {
+      "time": "14:45",
+      "event": "First 330 kV line restored after fire subsides",
+      "elements": ["Upper Tumut"],
+      "type": "return"
+    },
+    {
+      "time": "16:30",
+      "event": "NSW-VIC interconnector resynchronised",
+      "elements": [],
+      "type": "return"
+    },
+    {
+      "time": "18:00",
+      "event": "All Snowy region lines returned to service",
+      "elements": ["Murray", "Upper Tumut", "Lower Tumut", "Canberra"],
+      "type": "return"
+    }
+  ],
+  "affectedElements": {
+    "lines": [
+      "Lower Tumut to Canberra",
+      "Yass to Canberra"
+    ],
+    "substations": [
+      "Upper Tumut",
+      "Lower Tumut",
+      "Murray",
+      "Canberra",
+      "Tumut"
+    ],
+    "generators": [
+      "Tumut 3 (Snowy Hydro)",
+      "Murray 1 & 2 (Snowy Hydro)"
+    ]
+  },
+  "constraints": [
+    {
+      "id": "S>>NIL_VN",
+      "description": "VIC-NSW interconnector emergency constraint",
+      "invoked": "13:20",
+      "released": "16:30"
+    },
+    {
+      "id": "N>>N_SNOWY",
+      "description": "Snowy region multiple outage constraint",
+      "invoked": "13:06",
+      "released": "18:00"
+    }
+  ],
+  "camera": {
+    "longitude": 148.5,
+    "latitude": -35.8,
+    "height": 250000,
+    "heading": 0,
+    "pitch": -40
+  },
+  "aemoNameMapping": {
+    "lines": {
+      "Upper Tumut-Canberra 3 330kV": "Not exact match - closest: 'Lower Tumut to Canberra'",
+      "Murray-Upper Tumut 66 330kV": "No direct match in GA",
+      "Lower Tumut-Canberra 330kV": "Lower Tumut to Canberra"
+    },
+    "substations": {
+      "Upper Tumut": "Upper Tumut",
+      "Lower Tumut": "Lower Tumut", 
+      "Murray": "Murray",
+      "Canberra": "Canberra",
+      "Tumut": "Tumut"
+    },
+    "notes": "Some Snowy region interconnector lines (especially VIC-NSW ties through the mountains) may not be fully represented in GA public data. Substation names match well. The Murray-Upper Tumut internal Snowy Hydro connections may be classified differently."
+  },
+  "notes": "This was one of the most significant power system security events during the Black Summer bushfires. The separation of the two largest NEM regions (NSW and VIC) required careful resynchronisation. Snowy Hydro generators played a critical role in maintaining frequency control during the separation."
+}

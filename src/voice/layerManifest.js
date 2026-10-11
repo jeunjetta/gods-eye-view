@@ -355,6 +355,18 @@ const layers = [
     noQuery: 'cable records are not loaded for queries',
   },
   {
+    id: 'nem-grid',
+    aliases: [
+      'nem grid',
+      'power grid',
+      'electricity grid',
+      'transmission lines',
+      'australian grid',
+    ],
+    context: true,
+    noQuery: 'static infrastructure; use find features by name',
+  },
+  {
     // Global Context owns this layer; voice reaches it through
     // set_context_mode, never a bare toggle.
     id: 'military-awareness',

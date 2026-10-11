@@ -1,0 +1,169 @@
+{
+  "id": "balranald-buronga-2026-01-19",
+  "name": "Balranald-Buronga 220 kV X3 Line Trip",
+  "date": "2026-01-19",
+  "region": "NSW",
+  "summary": "A severe storm cell passing perpendicular to the Balranald-Buronga 220 kV X3 line resulted in the failure of six transmission towers approximately 1.6 km west of Balranald. Auto-reclosure was unsuccessful, resulting in a three-phase fault and lockout. Approximately 20 MW of generation and 3.4 MW of load at Balranald was disconnected.",
+  "source": "AEMO Power System Operating Incident Report - Three-phase fault on Balranald-Buronga 220 kV X3 line on 19 January 2026",
+  "sourceUrl": "https://www.aemo.com.au/-/media/files/electricity/nem/market_notices_and_events/power_system_incident_reports/2026/three-phase-fault-on-balranald--buronga-220-kv-x3-line.pdf",
+  "timeline": [
+    {
+      "time": "21:13",
+      "event": "Severe storm cell passes perpendicular to Balranald-Buronga 220 kV X3 line",
+      "elements": [],
+      "type": "note",
+      "cameraFocus": "Buronga to Balranald"
+    },
+    {
+      "time": "21:13",
+      "event": "Six transmission towers fail approximately 1.6 km west of Balranald due to storm damage",
+      "elements": ["Buronga to Balranald"],
+      "type": "trip",
+      "cameraFocus": "Balranald"
+    },
+    {
+      "time": "21:13",
+      "event": "Balranald-Buronga 220 kV X3 line trips on Phase B to ground fault",
+      "elements": ["Buronga to Balranald"],
+      "type": "trip",
+      "cameraFocus": "Balranald"
+    },
+    {
+      "time": "21:13",
+      "event": "Auto-reclosure attempted at Buronga end - unsuccessful due to failed towers",
+      "elements": ["Buronga"],
+      "type": "note",
+      "cameraFocus": "Buronga"
+    },
+    {
+      "time": "21:13",
+      "event": "Three-phase fault occurs during unsuccessful auto-reclosure. Voltages drop to 0.77 p.u. at Buronga across all three phases",
+      "elements": ["Buronga to Balranald", "Buronga"],
+      "type": "trip",
+      "cameraFocus": "Buronga"
+    },
+    {
+      "time": "21:13",
+      "event": "Line trips again and locks out. Protection operated as designed",
+      "elements": ["Buronga to Balranald"],
+      "type": "trip",
+      "cameraFocus": "Buronga to Balranald"
+    },
+    {
+      "time": "21:13",
+      "event": "Balranald-Darlington Point 220 kV X5 line trips due to Balranald fast voltage control scheme",
+      "elements": ["Darlington Point to Balranald"],
+      "type": "trip",
+      "cameraFocus": "Darlington Point to Balranald"
+    },
+    {
+      "time": "21:13",
+      "event": "Approximately 20 MW of generation and 3.4 MW of Balranald load disconnected",
+      "elements": ["Balranald"],
+      "type": "note",
+      "cameraFocus": "Balranald"
+    },
+    {
+      "time": "00:45",
+      "event": "Transgrid advises X5 line trip was due to fast voltage control scheme operation (next day)",
+      "elements": [],
+      "type": "note",
+      "cameraFocus": null
+    },
+    {
+      "time": "00:48",
+      "event": "Supply to Balranald restored via alternative supply path (3.5 hours after incident)",
+      "elements": ["Balranald"],
+      "type": "return",
+      "cameraFocus": "Balranald"
+    }
+  ],
+  "affectedElements": {
+    "lines": [
+      "Buronga to Balranald",
+      "Darlington Point to Balranald"
+    ],
+    "substations": [
+      "Balranald",
+      "Buronga",
+      "Darlington Point"
+    ],
+    "generators": []
+  },
+  "constraints": [
+    {
+      "id": "N>>N_BBX3",
+      "description": "Network outage constraint for Balranald-Buronga X3 line",
+      "invoked": "21:13",
+      "released": null
+    }
+  ],
+  "flyover": {
+    "description": "Camera flies from Buronga substation along the 220 kV line to Balranald, then to Darlington Point, showing the cascading effect of the storm damage",
+    "waypoints": [
+      {
+        "name": "Buronga 220 kV Substation",
+        "latitude": -34.10282,
+        "longitude": 142.25952,
+        "altitude": 50000,
+        "heading": 90,
+        "pitch": -35,
+        "holdSec": 3,
+        "annotation": "Storm cell approaches from the south. Buronga end will attempt auto-reclosure."
+      },
+      {
+        "name": "Tower failure location (1.6 km west of Balranald)",
+        "latitude": -34.65,
+        "longitude": 143.40,
+        "altitude": 15000,
+        "heading": 90,
+        "pitch": -45,
+        "holdSec": 4,
+        "annotation": "Six transmission towers failed here due to severe storm damage."
+      },
+      {
+        "name": "Balranald 220 kV Substation",
+        "latitude": -34.77559,
+        "longitude": 143.52511,
+        "altitude": 30000,
+        "heading": 270,
+        "pitch": -35,
+        "holdSec": 4,
+        "annotation": "Auto-reclosure unsuccessful. Three-phase fault. 20 MW generation and 3.4 MW load disconnected."
+      },
+      {
+        "name": "Darlington Point 330 kV Substation",
+        "latitude": -34.64891,
+        "longitude": 146.03517,
+        "altitude": 80000,
+        "heading": 270,
+        "pitch": -30,
+        "holdSec": 3,
+        "annotation": "X5 line trips due to fast voltage control scheme. Supply later restored via alternative path."
+      }
+    ],
+    "flightDurationSec": 5,
+    "easing": "cubic-in-out"
+  },
+  "camera": {
+    "longitude": 143.0,
+    "latitude": -34.5,
+    "height": 200000,
+    "heading": 0,
+    "pitch": -45
+  },
+  "aemoNameMapping": {
+    "description": "Mapping between AEMO element names and Geoscience Australia dataset names",
+    "lines": {
+      "Balranald – Buronga 220 kV X3 line": "Buronga to Balranald",
+      "Balranald – Darlington Point 220 kV X5 line": "Darlington Point to Balranald"
+    },
+    "substations": {
+      "Balranald": "Balranald",
+      "Buronga": "Buronga",
+      "Darlington Point": "Darlington Point"
+    },
+    "notes": "GA uses 'A to B' format while AEMO uses 'A – B' format. Substation names match exactly. Line circuit identifiers (X3, X5) are not in GA data - GA shows only the route, not individual circuits."
+  },
+  "notes": "This was a reviewable operating incident as the three-phase fault was a non-credible contingency event with no successful auto-reclose. The line was returned to service using temporary structures on 3 February 2026."
+}
