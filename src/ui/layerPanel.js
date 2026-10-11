@@ -42,6 +42,7 @@ const PANEL_GROUPS = [
       'local-datacenters',
       'telegeography-submarine-cables',
       'local-dams',
+      'nem-grid',
     ],
   },
   {
@@ -77,6 +78,7 @@ const PANEL_LABELS = {
   'alpr-cameras': 'Mapped ALPR Cameras',
   'local-datacenters': 'Data Centers',
   'local-firms': 'Active Fires',
+  'nem-grid': 'NEM Grid',
 };
 
 function panelLabel(layer) {

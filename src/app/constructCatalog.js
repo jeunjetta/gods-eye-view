@@ -31,6 +31,7 @@ import { createInfrastructureLayers } from '../data/infrastructure.js';
 import { localGeoJsonServices } from './localGeojsonServices.js';
 import { createBhoteKoshiEventLayer } from '../data/bhoteKoshiEvent.js';
 import { createBhoteKoshiLocatorLayer } from '../data/bhoteKoshiLocator.js';
+import { createApplicationNemGrid } from './layers/nemGrid.js';
 
 /**
  * Hardware-local layers are registered like any other but never enter share
@@ -162,6 +163,7 @@ export function createApplicationCatalog({
         createCyclonesLayer({ feed: sources.cyclones }),
         ...createInfrastructureLayers(localGeoJsonServices),
         createApplicationCables({ source: sources.cables }),
+        createApplicationNemGrid(),
         createApplicationFirms({
           surface,
           id: 'local-firms',
