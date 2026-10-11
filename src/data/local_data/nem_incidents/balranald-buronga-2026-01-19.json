@@ -47,21 +47,51 @@
       "event": "Line trips again and locks out. Protection operated as designed",
       "elements": ["Buronga to Balranald"],
       "type": "trip",
-      "cameraFocus": "Buronga to Balranald"
+      "cameraFocus": "Buronga to Balranald",
+      "constraints": [
+        {
+          "setId": "N-BABU",
+          "description": "X3 line outage constraint invoked - limits VIC1-NSW1 interconnector flow"
+        }
+      ]
     },
     {
       "time": "21:13",
       "event": "Balranald-Darlington Point 220 kV X5 line trips due to Balranald fast voltage control scheme",
       "elements": ["Darlington Point to Balranald"],
       "type": "trip",
-      "cameraFocus": "Darlington Point to Balranald"
+      "cameraFocus": "Darlington Point to Balranald",
+      "constraints": [
+        {
+          "setId": "N-BADP",
+          "description": "X5 line outage constraint invoked"
+        },
+        {
+          "setId": "N-X_BABU_BADP",
+          "description": "Combined X3+X5 outage constraint - more restrictive VIC-NSW limits"
+        }
+      ]
     },
     {
       "time": "21:13",
-      "event": "Approximately 20 MW of generation and 3.4 MW of Balranald load disconnected",
+      "event": "Approximately 20 MW of generation and 3.4 MW of Balranald load disconnected. AEMO invokes network constraints to manage interconnector flows.",
       "elements": ["Balranald"],
-      "type": "note",
-      "cameraFocus": "Balranald"
+      "type": "constraint",
+      "cameraFocus": "Balranald",
+      "constraints": [
+        {
+          "setId": "N-BABU",
+          "description": "Balranald-Buronga X3 outage"
+        },
+        {
+          "setId": "N-BADP",
+          "description": "Balranald-Darlington Point X5 outage"
+        },
+        {
+          "setId": "N-X_BABU_BADP",
+          "description": "Combined outage - restricts VIC1-NSW1, V-S-MNSP1, V-SA"
+        }
+      ]
     },
     {
       "time": "00:45",
@@ -92,10 +122,31 @@
   },
   "constraints": [
     {
-      "id": "N>>N_BBX3",
-      "description": "Network outage constraint for Balranald-Buronga X3 line",
+      "setId": "N-BABU",
+      "id": "N>>N_BABU",
+      "description": "Balranald-Buronga 220 kV X3 line outage constraint. Limits VIC1-NSW1 interconnector flow to manage thermal limits on remaining 220 kV paths.",
       "invoked": "21:13",
-      "released": null
+      "released": null,
+      "lhs": ["VIC1-NSW1", "V-S-MNSP1", "V-SA"],
+      "source": "AEMO MMSDM GENCONSETINVOKE / DISPATCHCONSTRAINT - January 2026"
+    },
+    {
+      "setId": "N-BADP",
+      "id": "N>>N_BADP",
+      "description": "Balranald-Darlington Point 220 kV X5 line outage constraint. Invoked when X5 trips due to fast voltage control scheme. Limits flow on Darlington Point corridor.",
+      "invoked": "21:13",
+      "released": null,
+      "lhs": ["VIC1-NSW1"],
+      "source": "AEMO MMSDM GENCONSETINVOKE / DISPATCHCONSTRAINT - January 2026"
+    },
+    {
+      "setId": "N-X_BABU_BADP",
+      "id": "N>>N_X_BABU_BADP",
+      "description": "Combined outage constraint for simultaneous loss of Balranald-Buronga X3 and Balranald-Darlington Point X5 lines. More restrictive limits on VIC-NSW transfer.",
+      "invoked": "21:13",
+      "released": null,
+      "lhs": ["VIC1-NSW1", "V-S-MNSP1", "V-SA"],
+      "source": "AEMO MMSDM GENCONSETINVOKE / DISPATCHCONSTRAINT - January 2026"
     }
   ],
   "flyover": {

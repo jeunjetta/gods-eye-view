@@ -88,17 +88,20 @@
   "constraints": [
     {
       "id": "S>>NIL_VN",
-      "description": "VIC-NSW interconnector emergency constraint",
+      "description": "VIC-NSW interconnector emergency constraint (estimated ID based on AEMO naming conventions)",
       "invoked": "13:20",
-      "released": "16:30"
+      "released": "16:30",
+      "verified": false
     },
     {
       "id": "N>>N_SNOWY",
-      "description": "Snowy region multiple outage constraint",
+      "description": "Snowy region multiple outage constraint (estimated ID based on AEMO naming conventions)",
       "invoked": "13:06",
-      "released": "18:00"
+      "released": "18:00",
+      "verified": false
     }
   ],
+  "constraintNote": "Constraint IDs are estimated based on AEMO constraint set naming conventions. Actual MMSDM GENCONSETINVOKE/DISPATCHCONSTRAINT data for January 2020 should be verified for exact constraint set IDs.",
   "camera": {
     "longitude": 148.5,
     "latitude": -35.8,

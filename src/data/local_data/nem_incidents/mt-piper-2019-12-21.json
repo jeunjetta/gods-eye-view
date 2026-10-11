@@ -79,17 +79,20 @@
   "constraints": [
     {
       "id": "N>>N_MTPB_5A3",
-      "description": "Network support constraint for Mt Piper - Bayswater 5A3 outage",
+      "description": "Network support constraint for Mt Piper - Bayswater 5A3 outage (estimated ID based on AEMO naming conventions)",
       "invoked": "12:02",
-      "released": "16:45"
+      "released": "16:45",
+      "verified": false
     },
     {
       "id": "N>>N_MTPB_5A5",
-      "description": "Network support constraint for Mt Piper - Bayswater 5A5 outage",
+      "description": "Network support constraint for Mt Piper - Bayswater 5A5 outage (estimated ID based on AEMO naming conventions)",
       "invoked": "12:08",
-      "released": "18:20"
+      "released": "18:20",
+      "verified": false
     }
   ],
+  "constraintNote": "Constraint IDs are estimated based on AEMO constraint set naming conventions. Actual MMSDM GENCONSETINVOKE/DISPATCHCONSTRAINT data for December 2019 should be verified for exact constraint set IDs.",
   "camera": {
     "longitude": 150.05,
     "latitude": -33.35,

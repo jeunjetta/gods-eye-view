@@ -1,6 +1,8 @@
 import { LayerLifecycle } from '../data/lifecycle.js';
 import { LayerPresentation } from './layerPresentation.js';
 import { createCyberSonarScene } from '../cyberSonarScene.js';
+import { createNemIncidentBinding } from '../ui/nemIncidentBinding.js';
+
 /** Register the application layer catalog before allowing state restoration. */
 export function createApplicationData({
   scene: { viewer, mapStackController },
@@ -59,5 +61,15 @@ export function createApplicationData({
   styleManager.attachDataManager(dataManager);
   defer(createCyberSonarScene(viewer, dataManager));
 
-  return { dataManager, catalog, presentation };
+  // Wire NEM grid incident panel
+  const nemIncidentBinding = createNemIncidentBinding({
+    dataManager,
+    viewer,
+    setPanelCollapsed: (panelId, collapsed, options) => {
+      styleManager?.setPanelCollapsed?.(panelId, collapsed, options);
+    },
+  });
+  defer(() => nemIncidentBinding?.destroy());
+
+  return { dataManager, catalog, presentation, nemIncidentBinding };
 }

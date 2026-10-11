@@ -65,17 +65,20 @@
   "constraints": [
     {
       "id": "N>>N_MUN_TUG",
-      "description": "Network constraint for Munmorah-Tuggerah corridor outage",
+      "description": "Network constraint for Munmorah-Tuggerah corridor outage (estimated ID based on AEMO naming conventions)",
       "invoked": "13:45",
-      "released": "16:30"
+      "released": "16:30",
+      "verified": false
     },
     {
       "id": "N>>N_MUN_SW",
-      "description": "Network constraint for Munmorah-Sydney West outage",
+      "description": "Network constraint for Munmorah-Sydney West outage (estimated ID based on AEMO naming conventions)",
       "invoked": "14:02",
-      "released": "17:45"
+      "released": "17:45",
+      "verified": false
     }
   ],
+  "constraintNote": "Constraint IDs are estimated based on AEMO constraint set naming conventions. Actual MMSDM GENCONSETINVOKE/DISPATCHCONSTRAINT data for January 2020 should be verified for exact constraint set IDs.",
   "camera": {
     "longitude": 151.35,
     "latitude": -33.25,

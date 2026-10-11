@@ -140,6 +140,59 @@
     </div>
   </div>
 
+  <!-- NEM Grid Incident Panel -->
+  <div id="nem-incident-panel" class="panel-collapsible collapsed" data-panel-id="nem-incident-panel">
+    <div class="panel-glow"></div>
+    <div class="nem-incident-panel-inner" data-rail-scroller>
+      <div class="panel-header">
+        <span class="panel-title">NEM INCIDENTS</span>
+        <span class="panel-divider"></span>
+        <button class="panel-collapse-btn" data-collapse-target="nem-incident-panel" title="Collapse panel">+</button>
+      </div>
+      <div class="nem-incident-body">
+        <div class="nem-incident-controls">
+          <select id="nem-incident-select" aria-label="Select incident">
+            <option value="">-- Select Incident --</option>
+          </select>
+          <button id="nem-incident-load-btn" class="scene-btn">LOAD</button>
+        </div>
+        <div id="nem-incident-info" class="nem-incident-info" hidden>
+          <div class="nem-incident-title"></div>
+          <div class="nem-incident-date"></div>
+          <div class="nem-incident-summary"></div>
+        </div>
+        <div id="nem-timeline-controls" class="nem-timeline-controls" hidden>
+          <div class="nem-timeline-progress">
+            <div class="nem-timeline-bar">
+              <div id="nem-timeline-fill" class="nem-timeline-fill"></div>
+            </div>
+            <span id="nem-timeline-position">0 / 0</span>
+          </div>
+          <div class="nem-timeline-buttons">
+            <button id="nem-prev-btn" class="scene-btn">◀ PREV</button>
+            <button id="nem-play-btn" class="scene-btn">▶ PLAY</button>
+            <button id="nem-next-btn" class="scene-btn">NEXT ▶</button>
+          </div>
+          <button id="nem-flyover-btn" class="scene-btn nem-flyover-btn" hidden>🎥 FLYOVER</button>
+          <button id="nem-fly-to-btn" class="scene-btn">📍 FLY TO AREA</button>
+        </div>
+        <div id="nem-event-card" class="nem-event-card" hidden>
+          <div class="nem-event-header">
+            <span class="nem-event-icon"></span>
+            <span class="nem-event-time"></span>
+          </div>
+          <div class="nem-event-text"></div>
+          <div class="nem-event-elements"></div>
+          <div class="nem-event-constraints" hidden>
+            <div class="nem-constraints-label">Constraints:</div>
+            <div class="nem-constraints-list"></div>
+          </div>
+        </div>
+        <div id="nem-incident-status" class="nem-incident-status">Enable NEM Grid layer to view incidents</div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scene Director Panel -->
   <div id="scene-panel" class="panel-collapsible collapsed" data-panel-id="scene-panel">
     <div class="panel-glow"></div>
