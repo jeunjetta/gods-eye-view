@@ -1,23 +1,9 @@
 /* NEM Grid Incident Panel Styles */
 
-.nem-incident-panel-inner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-height: 0;
-  max-height: 100%;
-  box-sizing: border-box;
-  padding: 14px;
-  border: 1px solid var(--glass-border);
-  border-radius: var(--panel-radius);
-  background: var(--glass-bg);
-  backdrop-filter: blur(24px) saturate(1.4);
-  -webkit-backdrop-filter: blur(24px) saturate(1.4);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
-    0 1px 0 rgba(255, 255, 255, 0.06) inset;
+/* Surface, border, padding and rail hit-testing come from the shared
+   [data-panel-surface] contract in panel-surfaces.css. */
+#nem-incident-panel {
+  --panel-expanded-width: 320px;
 }
 
 #nem-incident-panel .panel-glow {
@@ -61,6 +47,8 @@
 
 #nem-incident-select {
   flex: 1;
+  /* Long incident names must not widen the scroller and shift the body. */
+  min-width: 0;
   padding: 4px 8px;
   font: 10px var(--font-mono);
   background: rgba(0, 0, 0, 0.4);

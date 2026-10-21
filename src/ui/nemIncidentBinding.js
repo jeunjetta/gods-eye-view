@@ -24,6 +24,7 @@ export function createNemIncidentBinding({
   let panelController = null;
   let nemLayer = null;
   let destroyed = false;
+  let unsubscribe = null;
   
   const container = document.body;
   
@@ -59,10 +60,12 @@ export function createNemIncidentBinding({
     }
     
     if (dataManager) {
-      dataManager.subscribe((change) => {
+      // subscribe() delivers settled 'visibility' changes; 'visibility-settled'
+      // is only published on subscribeActivity().
+      unsubscribe = dataManager.subscribe((change) => {
         if (change?.layerId !== NEM_LAYER_ID) return;
         
-        if (change.type === 'visibility-settled') {
+        if (change.type === 'visibility') {
           if (!nemLayer) {
             nemLayer = findNemLayer();
             panelController?.setNemLayer(nemLayer);
@@ -121,6 +124,8 @@ export function createNemIncidentBinding({
     destroy() {
       if (destroyed) return;
       destroyed = true;
+      unsubscribe?.();
+      unsubscribe = null;
       panelController?.destroy();
       panelController = null;
       nemLayer = null;
