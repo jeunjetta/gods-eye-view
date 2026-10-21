@@ -76,6 +76,7 @@ Start with the included data sources, then add your own. Each layer is a separat
 - **🔍 Keyless search:** Type coordinates or a bundled city or landmark to fly there with no network request; other names use Google when configured, then Photon and Nominatim.
 - **📦 Shareable scenes:** Import, preview and share Director scenes as files or bundles, with camera anchors, authored moves and data packs.
 - **🌊 Nepal flood scene:** Replay the Bhote Koshi flood: flood path, witness sources and before-and-after imagery (bundled data is non-commercial; see [DATA_SOURCES.md](DATA_SOURCES.md)).
+- **⚡ Australian NEM Grid:** Transmission lines and substations for the National Electricity Market (NSW, VIC, QLD, SA, TAS, ACT). Lines colored by voltage (500 kV red → 66 kV teal). Includes historical incident data with timeline replay and camera flyovers. See [DATA_SOURCES.md](DATA_SOURCES.md) for attribution.
 
 ---
 

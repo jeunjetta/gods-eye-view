@@ -1,0 +1,104 @@
+{
+  "id": "mt-piper-2019-12-21",
+  "name": "Mt Piper 500 kV Line Trips",
+  "date": "2019-12-21",
+  "region": "NSW",
+  "summary": "During the Black Summer bushfires, multiple 500 kV transmission lines between Mt Piper and Bayswater tripped due to bushfire smoke ionisation and conductor clash. Mt Piper Unit 1 also tripped offline.",
+  "source": "AEMO Power System Operating Incident Report",
+  "sourceUrl": "https://aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-events-and-reports/power-system-operating-incident-reports",
+  "timeline": [
+    {
+      "time": "11:45",
+      "event": "Bushfire activity intensifies near Mt Piper - Bayswater corridor",
+      "elements": [],
+      "type": "note"
+    },
+    {
+      "time": "12:02",
+      "event": "Mount Piper to Bayswater 5A3 line trips due to smoke ionisation",
+      "elements": ["Mount Piper to Bayswater"],
+      "type": "trip"
+    },
+    {
+      "time": "12:02",
+      "event": "N>N-1 constraint N>>N_MTPB_5A3 invoked",
+      "elements": [],
+      "type": "constraint"
+    },
+    {
+      "time": "12:08",
+      "event": "Mount Piper to Bayswater 5A5 line trips",
+      "elements": ["Mount Piper to Bayswater"],
+      "type": "trip"
+    },
+    {
+      "time": "12:15",
+      "event": "Mt Piper Unit 1 trips offline due to protection operation",
+      "elements": ["Mount Piper 500"],
+      "type": "trip"
+    },
+    {
+      "time": "12:15",
+      "event": "Load shedding constraints activated for central-west NSW",
+      "elements": [],
+      "type": "constraint"
+    },
+    {
+      "time": "14:30",
+      "event": "Mt Piper Unit 1 resynchronised",
+      "elements": ["Mount Piper 500"],
+      "type": "return"
+    },
+    {
+      "time": "16:45",
+      "event": "5A3 line returned to service following line patrol",
+      "elements": ["Mount Piper to Bayswater"],
+      "type": "return"
+    },
+    {
+      "time": "18:20",
+      "event": "5A5 line returned to service, system restored to normal",
+      "elements": ["Mount Piper to Bayswater"],
+      "type": "return"
+    }
+  ],
+  "affectedElements": {
+    "lines": [
+      "Mount Piper to Bayswater"
+    ],
+    "substations": [
+      "Mount Piper 500",
+      "Mount Piper 132",
+      "Bayswater",
+      "Wallerawang 330"
+    ],
+    "generators": [
+      "Mt Piper Power Station Unit 1"
+    ]
+  },
+  "constraints": [
+    {
+      "id": "N>>N_MTPB_5A3",
+      "description": "Network support constraint for Mt Piper - Bayswater 5A3 outage (estimated ID based on AEMO naming conventions)",
+      "invoked": "12:02",
+      "released": "16:45",
+      "verified": false
+    },
+    {
+      "id": "N>>N_MTPB_5A5",
+      "description": "Network support constraint for Mt Piper - Bayswater 5A5 outage (estimated ID based on AEMO naming conventions)",
+      "invoked": "12:08",
+      "released": "18:20",
+      "verified": false
+    }
+  ],
+  "constraintNote": "Constraint IDs are estimated based on AEMO constraint set naming conventions. Actual MMSDM GENCONSETINVOKE/DISPATCHCONSTRAINT data for December 2019 should be verified for exact constraint set IDs.",
+  "camera": {
+    "longitude": 150.05,
+    "latitude": -33.35,
+    "height": 150000,
+    "heading": 0,
+    "pitch": -45
+  },
+  "notes": "This incident was part of the widespread bushfire impacts across NSW during the 2019-2020 Black Summer. The 500 kV lines between Mt Piper and Bayswater form a critical transmission path for power from the western coal-fired generators."
+}

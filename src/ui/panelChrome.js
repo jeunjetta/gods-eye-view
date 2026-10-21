@@ -17,6 +17,7 @@ const SHARE_PANEL_STATE_SPECS = Object.freeze([
   { id: 'street-level-panel' },
   { id: 'radio-panel' },
   { id: 'scene-panel' },
+  { id: 'nem-incident-panel' },
   { id: 'global-context-panel' },
   { id: 'pp-toggles' },
   { id: 'param-slider-panel' },
